@@ -1,5 +1,7 @@
 <template>
-  <button @click="handleClick">
+  <button
+      @click="handleClick"
+      class="el-button">
     <slot/>
   </button>
 </template>

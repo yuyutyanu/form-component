@@ -10,8 +10,19 @@
     mounted(){
        this.$parent.$emit('el.form.addField', this)
     },
-    validate(){
-
+    computed:{
+      form(){
+        let parent = this.$parent
+        while(parent.$options.componentName != 'ElForm'){
+          parent = parent.$parent
+        }
+        return parent
+      }
+    },
+    methods: {
+      validate(){
+        const rules = this.form.rules
+      }
     }
   }
 </script>

@@ -7,8 +7,10 @@
 <script>
   export default{
     name: 'ElForm',
+    componentName: 'ElForm',
     props: {
       formData: Object,
+      rules:Object
     },
     created() {
       this.$on('el.form.addField', (field) => {
@@ -24,7 +26,9 @@
     },
     methods: {
       validate(){
-
+        this.fields.forEach(field => {
+          field.validate()
+        })
       }
     }
   }
