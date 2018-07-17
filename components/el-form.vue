@@ -1,20 +1,18 @@
 <template>
-  <section>
-    <div>
-      <slot/>
-    </div>
-  </section>
+  <div class="el-form"> <!--form event stop -->
+    <slot/>
+  </div>
 </template>
 
 <script>
   export default{
-    name:'ElForm',
+    name: 'ElForm',
     props: {
       formData: Object,
     },
     created() {
-      this.$on('el.form.addField', (field) =>{
-        if(field){
+      this.$on('el.form.addField', (field) => {
+        if (field) {
           this.fields.push(field)
         }
       })
@@ -22,6 +20,11 @@
     data(){
       return {
         fields: []
+      }
+    },
+    methods: {
+      validate(){
+
       }
     }
   }

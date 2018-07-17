@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <input type="text">
-  </div>
+  <input type="text" class="el-input">
 </template>
 
 <script>
   export default{
-    name:'ElInput',
-    mounted(){
-       this.$parent.$emit('el.form.addField', this)
-    }
+    name: 'ElInput'
   }
 </script>
+
+<style scoped>
+
+</style>
