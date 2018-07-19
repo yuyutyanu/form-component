@@ -1,10 +1,12 @@
 <template>
-  <input type="text" class="el-input">
+  <input type="text" class="el-input" @input="$emit('input', $event.target.value)">
 </template>
 
 <script>
   export default{
-    name: 'ElInput'
+    name: 'ElInput',
+    props:["value"],
+
   }
 </script>
 

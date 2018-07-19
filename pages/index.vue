@@ -1,14 +1,15 @@
 <template>
   <section class="container">
-    <el-form :form-data="formData" :rules="rules" ref="validateForm">
-      <el-form-item>
-        <el-input></el-input>
+    <el-form :formItems="formItems" :rules="rules" ref="validateForm">
+      <el-form-item prop="email">
+        <el-input v-model="formItems.email"></el-input>
       </el-form-item>
-      <div>
+      <el-form-item prop="name">
+        <el-input v-model="formItems.name"></el-input>
+      </el-form-item>
       <el-form-item>
         <el-button @click="submitForm('validateForm')">送信！</el-button>
       </el-form-item>
-      </div>
     </el-form>
   </section>
 </template>
@@ -17,11 +18,17 @@
   export default {
     data(){
       return {
-        formData: {
-          name: 'hoge'
+        formItems: {
+          name: 'hoge',
+          email:'hogehoge'
         },
         rules:{
-          rule1:'しぇけなべいべ'
+          name:[
+            {type:'alphanum', message:'英数字で入力してください'},
+          ],
+          email:[
+            {type:'email', message:'Eメール形式で入力してください'},
+          ]
         }
       }
     },

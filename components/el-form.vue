@@ -1,7 +1,7 @@
 <template>
-  <div class="el-form"> <!--form event stop -->
+  <form class="el-form" @submit.prevent="$emit('sbumit')"> <!--form event stop -->
     <slot/>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -9,7 +9,7 @@
     name: 'ElForm',
     componentName: 'ElForm',
     props: {
-      formData: Object,
+      formItems: Object,
       rules:Object
     },
     created() {
